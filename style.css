@@ -1,10 +1,152 @@
-header{
-    background-color: black;
-    color: red;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
-main{
-    background-color: red;
-    color: black;
+
+body {
+    background-color: #0f172a; /* Fundo escuro */
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    padding: 2rem 1rem;
     text-align: center;
+    border-bottom: 2px solid #6366f1;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+header h1 span {
+    color: #6366f1; /* Cor de destaque neon */
+}
+
+header p {
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+/* Container Principal */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    flex: 1;
+}
+
+.hero {
+    background-color: #1e293b;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    border-left: 4px solid #6366f1;
+}
+
+.hero h2 {
+    margin-bottom: 0.5rem;
+    color: #f1f5f9;
+}
+
+.hero p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Grid de Jogos */
+.games-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #f8fafc;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card do Jogo */
+.game-card {
+    background-color: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+    border-color: #6366f1;
+}
+
+.card-image {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #818cf8;
+    margin-bottom: 0.5rem;
+}
+
+.card-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+.btn-play {
+    display: block;
+    text-align: center;
+    background-color: #6366f1;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-play:hover {
+    background-color: #4f46e5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #090d16;
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-top: 2rem;
 }

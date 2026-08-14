@@ -9,140 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos dos Modais de Jogos */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background: #1e1e2e;
-            color: #fff;
-            padding: 24px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 550px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 28px;
-            cursor: pointer;
-            color: #aaa;
-            transition: color 0.2s;
-        }
-
-        .close-btn:hover {
-            color: #fff;
-        }
-
-        /* Estilos do Campo Minado */
-        #minesweeper-grid {
-            display: grid;
-            grid-template-columns: repeat(8, 35px);
-            grid-gap: 4px;
-            justify-content: center;
-            margin: 15px auto;
-        }
-
-        .cell {
-            width: 35px;
-            height: 35px;
-            background-color: #313244;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            cursor: pointer;
-            user-select: none;
-            font-size: 14px;
-        }
-
-        .cell.revealed {
-            background-color: #45475a;
-        }
-
-        .cell.mine {
-            background-color: #f38ba8;
-        }
-
-        /* Estilos do Paciência */
-        #solitaire-board {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .solitaire-col {
-            width: 55px;
-            min-height: 140px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 6px;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            padding: 4px;
-        }
-
-        .card {
-            height: 35px;
-            background: #cdd6f4;
-            color: #11111b;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .card.red {
-            color: #e64553;
-        }
-
-        .game-controls {
-            margin-top: 15px;
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .game-btn {
-            background: #89b4fa;
-            color: #11111b;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .game-btn:hover {
-            opacity: 0.9;
-        }
-    </style>
 </head>
 <body>
 
@@ -167,10 +33,10 @@
                 <div class="game-card">
                     <div class="card-image" style="background-image: url('https://picsum.photos/300/180?random=1');"></div>
                     <div class="card-info">
-                        <span class="tag">Clássico / Arcada</span>
-                        <h4>Jogo da Cobrinha (Snake)</h4>
-                        <p>Use as setas do teclado para comer as frutas e crescer sem bater nas paredes!</p>
-                        <a href="#" class="btn-play" onclick="openGame('snake')">Jogar Agora</a>
+                        <span class="tag">Arcade</span>
+                        <h4>Jogo da Cobrinha</h4>
+                        <p>O clássico dos clássicos! Tente crescer o máximo possível sem bater.</p>
+                        <a href="https://www.google.com/fbx?fbx=snake_arcade&fbxga=0&hl=pt-BR&origin=www.google.com" target="_blank" class="btn-play">Jogar Agora</a>
                     </div>
                 </div>
 
@@ -178,10 +44,10 @@
                 <div class="game-card">
                     <div class="card-image" style="background-image: url('https://picsum.photos/300/180?random=2');"></div>
                     <div class="card-info">
-                        <span class="tag">Cartas / Cartas</span>
-                        <h4>Paciência (Solitaire)</h4>
-                        <p>Organize as cartas em ordem decrescente alternando as cores vermelho e preto.</p>
-                        <a href="#" class="btn-play" onclick="openGame('solitaire')">Jogar Agora</a>
+                        <span class="tag">Cartas</span>
+                        <h4>Paciência</h4>
+                        <p>Organize as cartas em ordem decrescente e teste sua paciência.</p>
+                        <a href="https://www.google.com/logos/fnbx/solitaire/standalone.4.html?hl=pt-BR&origin=www.google.com" target="_blank" class="btn-play">Jogar Agora</a>
                     </div>
                 </div>
 
@@ -189,173 +55,19 @@
                 <div class="game-card">
                     <div class="card-image" style="background-image: url('https://picsum.photos/300/180?random=3');"></div>
                     <div class="card-info">
-                        <span class="tag">Estratégia / Lógica</span>
+                        <span class="tag">Lógica</span>
                         <h4>Campo Minado</h4>
-                        <p>Revele os campos sem explodir nas minas ocultas! Clique com botão direito para marcar.</p>
-                        <a href="#" class="btn-play" onclick="openGame('minesweeper')">Jogar Agora</a>
+                        <p>Use a lógica para limpar o campo sem ativar nenhuma mina.</p>
+                        <a href="https://www.google.com/fbx?fbx=minesweeper&fbxga=0&hl=pt-BR&origin=www.google.com" target="_blank" class="btn-play">Jogar Agora</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Modal Jogo Snake -->
-    <div id="modal-snake" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeGame('snake')">&times;</span>
-            <h3>Jogo da Cobrinha</h3>
-            <p>Pontuação: <span id="snake-score">0</span></p>
-            <canvas id="snakeCanvas" width="300" height="300" style="background:#11111b; border-radius:8px; margin-top:10px;"></canvas>
-            <div class="game-controls">
-                <button class="game-btn" onclick="startSnake()">Reiniciar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Jogo Paciência -->
-    <div id="modal-solitaire" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeGame('solitaire')">&times;</span>
-            <h3>Paciência Simplificada</h3>
-            <p>Clique nas cartas para mover para a coluna válida!</p>
-            <div id="solitaire-board"></div>
-            <div class="game-controls">
-                <button class="game-btn" onclick="initSolitaire()">Novo Jogo</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Jogo Campo Minado -->
-    <div id="modal-minesweeper" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeGame('minesweeper')">&times;</span>
-            <h3>Campo Minado</h3>
-            <p id="mines-status">Encontre todas as casas seguras!</p>
-            <div id="minesweeper-grid"></div>
-            <div class="game-controls">
-                <button class="game-btn" onclick="initMinesweeper()">Reiniciar</button>
-            </div>
-        </div>
-    </div>
-
     <footer>
         <p>&copy; 2026 LksGamecenter - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Scripts de Funcionalidade dos Jogos -->
-    <script>
-        function openGame(game) {
-            document.getElementById(`modal-${game}`).style.display = 'flex';
-            if(game === 'snake') startSnake();
-            if(game === 'solitaire') initSolitaire();
-            if(game === 'minesweeper') initMinesweeper();
-        }
-
-        function closeGame(game) {
-            document.getElementById(`modal-${game}`).style.display = 'none';
-            if(game === 'snake') clearInterval(snakeInterval);
-        }
-
-        /* --- LÓGICA DO SNAKE --- */
-        let snakeCanvas = document.getElementById('snakeCanvas');
-        let ctx = snakeCanvas.getContext('2d');
-        let snake, food, dx, dy, score, snakeInterval;
-
-        function startSnake() {
-            clearInterval(snakeInterval);
-            snake = [{x: 150, y: 150}];
-            food = {x: 60, y: 60};
-            dx = 15; dy = 0; score = 0;
-            document.getElementById('snake-score').innerText = score;
-            snakeInterval = setInterval(updateSnake, 120);
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowUp' && dy === 0) { dx = 0; dy = -15; }
-            if (e.key === 'ArrowDown' && dy === 0) { dx = 0; dy = 15; }
-            if (e.key === 'ArrowLeft' && dx === 0) { dx = -15; dy = 0; }
-            if (e.key === 'ArrowRight' && dx === 0) { dx = 15; dy = 0; }
-        });
-
-        function updateSnake() {
-            let head = {x: snake[0].x + dx, y: snake[0].y + dy};
-            if (head.x < 0 || head.x >= 300 || head.y < 0 || head.y >= 300 || snake.some(s => s.x === head.x && s.y === head.y)) {
-                alert('Game Over!');
-                startSnake();
-                return;
-            }
-            snake.unshift(head);
-            if (head.x === food.x && head.y === food.y) {
-                score += 10;
-                document.getElementById('snake-score').innerText = score;
-                food = {x: Math.floor(Math.random() * 20) * 15, y: Math.floor(Math.random() * 20) * 15};
-            } else {
-                snake.pop();
-            }
-
-            ctx.fillStyle = '#11111b';
-            ctx.fillRect(0, 0, 300, 300);
-            ctx.fillStyle = '#a6e3a1';
-            snake.forEach(s => ctx.fillRect(s.x, s.y, 14, 14));
-            ctx.fillStyle = '#f38ba8';
-            ctx.fillRect(food.x, food.y, 14, 14);
-        }
-
-        /* --- LÓGICA DO CAMPO MINADO --- */
-        function initMinesweeper() {
-            const grid = document.getElementById('minesweeper-grid');
-            document.getElementById('mines-status').innerText = "Encontre todas as casas seguras!";
-            grid.innerHTML = '';
-            let board = Array(64).fill(0);
-            let mines = [];
-            while(mines.length < 10) {
-                let r = Math.floor(Math.random() * 64);
-                if(!mines.includes(r)) mines.push(r);
-            }
-            mines.forEach(m => board[m] = 'M');
-
-            for(let i=0; i<64; i++) {
-                let cell = document.createElement('div');
-                cell.className = 'cell';
-                cell.addEventListener('click', () => {
-                    if(board[i] === 'M') {
-                        cell.classList.add('mine');
-                        cell.innerText = '💣';
-                        document.getElementById('mines-status').innerText = "Você perdeu!";
-                    } else {
-                        cell.classList.add('revealed');
-                        cell.innerText = '✓';
-                    }
-                });
-                cell.addEventListener('contextmenu', (e) => {
-                    e.preventDefault();
-                    cell.innerText = cell.innerText === '🚩' ? '' : '🚩';
-                });
-                grid.appendChild(cell);
-            }
-        }
-
-        /* --- LÓGICA DO PACIÊNCIA (MINI) --- */
-        function initSolitaire() {
-            const board = document.getElementById('solitaire-board');
-            board.innerHTML = '';
-            const suits = ['♠', '♥', '♦', '♣'];
-            const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-
-            for (let i = 0; i < 4; i++) {
-                let col = document.createElement('div');
-                col.className = 'solitaire-col';
-                for (let j = 0; j < 3; j++) {
-                    let card = document.createElement('div');
-                    let suit = suits[Math.floor(Math.random() * suits.length)];
-                    let val = values[Math.floor(Math.random() * values.length)];
-                    card.className = `card ${suit === '♥' || suit === '♦' ? 'red' : ''}`;
-                    card.innerText = `${val}${suit}`;
-                    col.appendChild(card);
-                }
-                board.appendChild(col);
-            }
-        }
-    </script>
 </body>
 </html>
